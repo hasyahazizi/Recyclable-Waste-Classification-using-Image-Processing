@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Prediction Result</h2>
+    <p>Predicted Class: <strong>{{ predicted_class }}</strong></p>
+    <p>Confidence: <strong>{{ confidence | round(4) }}</strong></p>
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" style="max-width: 300px;"/>
+    <br>
+    <a href="{{ url_for('predict') }}" class="button">Classify another image</a>
+</div>
+{% endblock %}
