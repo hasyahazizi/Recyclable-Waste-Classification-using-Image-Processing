@@ -1,0 +1,58 @@
+@font-face {
+    font-family: IM Fell French Canon Pro;
+    src: url(/static/fonts/IMFellFrenchCanon-Regular.ttf);
+}
+
+body {
+    margin: 0%;
+    background-color: ivory;
+    font-family: IM Fell French Canon Pro;
+    text-align: center;
+}
+
+.header {
+    background: #CBD2A4;
+    text-align: center;
+    color: #54473F;
+    padding: 16px;
+    box-shadow: #E9EED9;
+}
+
+.container{
+    margin: auto;
+    padding: 100px;
+}
+
+h2{
+    padding: 0%;
+    font-size: 40px;
+}
+
+h3{
+    padding-bottom: 16px;
+}
+
+.button {
+    background-color: #EEE1C6;
+    border: 2px solid #54473F;
+    border-radius: 30px;
+    box-shadow: #54473F 4px 4px 0 0;
+    color: #54473F;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 30px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:hover {
+    background-color: #CBD2A4;
+    color: ivory;
+    transform: scale(1.05) rotate(-1deg);
+}
