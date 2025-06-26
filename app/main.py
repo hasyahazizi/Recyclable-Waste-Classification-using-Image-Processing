@@ -6,15 +6,15 @@ from tensorflow import keras
 import numpy as np
 
 from tensorflow.keras.preprocessing import image as k_image
-from tensorflow.keras.applications.resnet50 import preprocess_input
+# from tensorflow.keras.applications.resnet50 import preprocess_input
+from tensorflow.keras.applications.densenet import preprocess_input
 
 print("Tensorflow version: ", tf.__version__)
-print("Keras version: ", keras.__version__)
 
 app = Flask(__name__)
 
 # Load model
-model = keras.models.load_model('resnet50_model.h5', compile=False)
+model = keras.models.load_model('densenet_model_v3.h5', compile=False)
 
 # Set model to inference mode
 model.trainable = False
@@ -64,7 +64,8 @@ def upload():
         confidence = float(np.max(predictions))
 
         # Render the results in a new template
-        return render_template("result.html", predicted_class=CLASS_NAMES[predicted_index], confidence=confidence, filename=filename)
+        return render_template("result.html", predicted_class=CLASS_NAMES[predicted_index],
+                               confidence=confidence, filename=filename)
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
