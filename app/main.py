@@ -20,6 +20,14 @@ model = keras.models.load_model('densenet_model_v3.h5', compile=False)
 # Set model to inference mode
 model.trainable = False
 
+# Create uploads folder if it doesn't exist
+def create_upload_folder():
+    UPLOAD_FOLDER = 'uploads'
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
+        print(f"Created upload directory: {UPLOAD_FOLDER}")
+    return UPLOAD_FOLDER
+
 # Class names mapping
 CLASS_NAMES = [
     'cardboard', 'glass', 'metal', 
@@ -27,7 +35,7 @@ CLASS_NAMES = [
 ]
 
 # Specify upload folder
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = create_upload_folder()
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET'])
