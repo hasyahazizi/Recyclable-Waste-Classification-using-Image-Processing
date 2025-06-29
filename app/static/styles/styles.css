@@ -18,19 +18,56 @@ body {
     box-shadow: #E9EED9;
 }
 
-.container{
-    margin: auto;
-    padding: 100px;
+.container {
+    margin: 80px 250px;
+    padding: 100px 0;
+    border-color: #CBD2A4;
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 1.25rem;
+    background-color: #fafee5;
 }
 
-h2{
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+    min-height: 400px;
+    margin: 70px 100px;
+}
+
+.left,
+.right {
+    flex: 1;
+    margin: 0px 20px;
+    padding: 50px 100px;
+}
+
+.img{
+    max-width: 500px;
+}
+
+h2 {
     padding: 0%;
     font-size: 40px;
 }
 
-h3{
+h3 {
+    margin: 0 30px;
     padding-bottom: 16px;
 }
+
+.material-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.prediction {
+    flex: 1;
+    min-width: 300px;
+}
+
 
 .button {
     background-color: #EEE1C6;
@@ -49,6 +86,7 @@ h3{
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin: 20px;
 }
 
 .button:hover {
