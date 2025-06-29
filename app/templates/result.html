@@ -1,11 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h2>Prediction Result</h2>
-    <p>Predicted Class: <strong>{{ predicted_class }}</strong></p>
-    <p>Confidence: <strong>{{ confidence | round(4) }}</strong></p>
-    <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" style="max-width: 300px;"/>
-    <br>
-    <a href="{{ url_for('predict') }}" class="button">Classify another image</a>
+<div class="flex-container">
+    <div class="left">
+        <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" style="max-width: 300px;" />
+        <br>
+        <a href="{{ url_for('predict') }}" class="button">Classify another image</a>
+    </div>
+    <div class="right">
+        <h2>Prediction Result</h2>
+        <p>Predicted Class: <strong>{{ predicted_class }}</strong></p>
+        <p>Confidence: <strong>{{ confidence | round(4) }}</strong></p>
+
+        <div class="material-info">
+            {% if predicted_class == 'cardboard' %}
+            <h3>Did you know?</h3>
+            Recycling one ton of cardboard can save 17 trees!
+            {% elif predicted_class == 'glass' %}
+            <h3>Did you know?</h3>
+            glassssss
+            {% elif predicted_class == 'metal' %}
+            <h3>Did you know?</h3>
+            Metal is infinitely recyclable! If you have small pieces of metal that you want to recycle,
+            like tiny scraps of aluminium foils, save them until you can lump them together into a ball.
+            This helps separators to detect the metal better so they can send them to a suitable recycling center!
+            {% elif predicted_class == 'plastic' %}
+            <h3>Did you know?</h3>
+            Plastic takes 1,000 years to break down in landfills.
+            And approximately only 9% of the plastic in the world is recycled.
+            This is because some plastics cannot be recycled or they are contaminated by food or other substances.
+            Like when we use one-use plastic containers without washing!
+            It is much more sustainable to say NO to plastic or reuse them as many times as you can before throwing it away in the recycling bin!
+            {% elif predicted_class == 'paper' %}
+            <h3>Did you know?</h3>
+            Although 
+            {% elif predicted_class == 'trash' %}
+            <h3>Did you know?</h3>
+            trash bad
+            {% else %}
+            <h3>Recycling Information</h3>
+            <!-- Default message for other classes -->
+            {% endif %}
+        </div>
+
+    </div>
 </div>
 {% endblock %}

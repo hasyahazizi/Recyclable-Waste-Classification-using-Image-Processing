@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <h2>Welcome!</h2>
-    <h3>Classifier page</h3>
+    <h3>Please upload an image from your device!
+        <br>
+        Then click 'Classify'!
+    </h3>
     <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
         <input type="file" name="file" accept="image/*" required>
-        <button type="submit" class="button">Go</button>
+        <br>
+        <br>
+        
+        <button type="submit" class="button">Classify</button>
     </form>
 </div>
 {% endblock %}
