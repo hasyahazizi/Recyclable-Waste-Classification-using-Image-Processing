@@ -4,6 +4,7 @@ import os
 import tensorflow as tf
 from tensorflow import keras 
 import numpy as np
+from PIL import Image
 
 from tensorflow.keras.preprocessing import image as k_image
 # from tensorflow.keras.applications.resnet50 import preprocess_input
